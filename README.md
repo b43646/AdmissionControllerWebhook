@@ -1,0 +1,2 @@
+# AdmissionControllerWebhook
+准入控制器webhook应用demo

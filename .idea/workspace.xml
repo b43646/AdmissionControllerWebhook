@@ -15,9 +15,19 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cmd/webhook-server/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="25" column="14" lean-forward="true" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
+            <state relative-caret-position="463">
+              <caret line="69" column="32" selection-start-line="69" selection-start-column="32" selection-end-line="69" selection-end-column="32" />
+              <folding>
+                <element signature="e#578#749#0" expanded="true" />
+              </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cmd/examcode/runasnonroot.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-969" />
           </provider>
         </entry>
       </file>
@@ -98,6 +108,12 @@
               <item name="AdmissionControllerWebhook" type="b2602c69:ProjectViewProjectNode" />
               <item name="AdmissionControllerWebhook" type="462c0819:PsiDirectoryNode" />
               <item name="cmd" type="462c0819:PsiDirectoryNode" />
+              <item name="examcode" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AdmissionControllerWebhook" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AdmissionControllerWebhook" type="462c0819:PsiDirectoryNode" />
+              <item name="cmd" type="462c0819:PsiDirectoryNode" />
               <item name="webhook-server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -127,6 +143,11 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cmd/examcode" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -186,10 +207,18 @@
     <entry file="file://$PROJECT_DIR$/examples/pod-with-conflict.yaml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/cmd/examcode/runasnonroot.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-969" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/cmd/webhook-server/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="25" column="14" lean-forward="true" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
+        <state relative-caret-position="463">
+          <caret line="69" column="32" selection-start-line="69" selection-start-column="32" selection-end-line="69" selection-end-column="32" />
+          <folding>
+            <element signature="e#578#749#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

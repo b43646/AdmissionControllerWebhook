@@ -68,8 +68,6 @@ func applySecurityDefaults(req *v1beta1.AdmissionRequest) ([]patchOperation, err
 	patches = append(patches, patchOperation{
 		Op:    "add",
 		Path:  "/metadata/labels/user",
-		// The value must not be true if runAsUser is set to 0, as otherwise we would create a conflicting
-		// configuration ourselves.
 		Value: "Loren",
 	})
 

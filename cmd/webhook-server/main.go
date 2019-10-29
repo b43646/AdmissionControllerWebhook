@@ -85,7 +85,7 @@ func applySecurityDefaults(req *v1beta1.AdmissionRequest) ([]patchOperation, err
 			patches = append(patches, patchOperation{
 				Op:    "add",
 				Path:  "/spec/securityContext/runAsUser",
-				Value: 1234,
+				Value: 1000100000,
 			})
 		}
 	} else if *runAsNonRoot == true && (runAsUser != nil && *runAsUser == 0) {

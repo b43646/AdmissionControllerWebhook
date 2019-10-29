@@ -17,7 +17,7 @@ spec:
     spec:
       securityContext:
         runAsNonRoot: true
-        runAsUser: 1234
+        runAsUser: 1000100000
       containers:
       - name: server
         image: quay.io/loren123/admission-controller-webhook-demo:latest

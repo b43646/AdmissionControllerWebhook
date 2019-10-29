@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="efa10944-ffe7-431f-8c36-9bc4fe51338d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/cmd/webhook-server/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/webhook-server/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deployment/deployment.yaml.template" beforeDir="false" afterPath="$PROJECT_DIR$/deployment/deployment.yaml.template" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,7 +17,16 @@
         <entry file="file://$PROJECT_DIR$/cmd/webhook-server/main.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="399">
-              <caret line="87" column="33" selection-start-line="87" selection-start-column="33" selection-end-line="87" selection-end-column="33" />
+              <caret line="87" column="34" lean-forward="true" selection-start-line="87" selection-start-column="34" selection-end-line="87" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/deployment/deployment.yaml.template">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -42,6 +52,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/deployment/deployment.yaml.template" />
         <option value="$PROJECT_DIR$/cmd/webhook-server/main.go" />
       </list>
     </option>
@@ -56,7 +67,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="149" />
     <option name="width" value="690" />
     <option name="height" value="272" />
@@ -85,6 +96,16 @@
               <item name="cmd" type="462c0819:PsiDirectoryNode" />
               <item name="webhook-server" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="AdmissionControllerWebhook" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AdmissionControllerWebhook" type="462c0819:PsiDirectoryNode" />
+              <item name="deployment" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AdmissionControllerWebhook" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AdmissionControllerWebhook" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -92,6 +113,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="go.import.settings.migrated" value="true" />
@@ -150,10 +172,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/deployment/deployment.yaml.template">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/cmd/webhook-server/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
-          <caret line="87" column="33" selection-start-line="87" selection-start-column="33" selection-end-line="87" selection-end-column="33" />
+          <caret line="87" column="34" lean-forward="true" selection-start-line="87" selection-start-column="34" selection-end-line="87" selection-end-column="34" />
         </state>
       </provider>
     </entry>

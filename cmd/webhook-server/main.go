@@ -17,11 +17,17 @@ limitations under the License.
 package main
 
 import (
-//	"errors"
-//	"fmt"
+	"fmt"
+	"os"
+	"strings"
+
+	//	"errors"
+	//	"fmt"
 	"k8s.io/api/admission/v1beta1"
-//	corev1 "k8s.io/api/core/v1"
+	//	corev1 "k8s.io/api/core/v1"
+	//ev1 "k8s.io/api/extensions/v1beta1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	ov1 "github.com/openshift/api/apps/v1"
 	"log"
 	"net/http"
 	"path/filepath"
@@ -34,7 +40,9 @@ const (
 )
 
 var (
-	podResource = metav1.GroupVersionResource{Version: "v1", Resource: "pods"}
+	//podResource = metav1.GroupVersionResource{Version: "v1", Resource: "pods"}
+	//deploymentResource = metav1.GroupVersionResource{Version: "extensions/v1beta1", Resource: "Deployments"}
+	dcResource = metav1.GroupVersionResource{Version: "apps.openshift.io/v1", Resource: "DeploymentConfig"}
 )
 
 // applySecurityDefaults implements the logic of our example admission controller webhook. For every pod that is created
@@ -50,10 +58,10 @@ func applySecurityDefaults(req *v1beta1.AdmissionRequest) ([]patchOperation, err
 	// This handler should only get called on Pod objects as per the MutatingWebhookConfiguration in the YAML file.
 	// However, if (for whatever reason) this gets invoked on an object of a different kind, issue a log message but
 	// let the object request pass through otherwise.
-	if req.Resource != podResource {
-		log.Printf("expect resource to be %s", podResource)
-		return nil, nil
-	}
+	//if req.Resource != podResource {
+	//	log.Printf("expect resource to be %s", podResource)
+	//	return nil, nil
+	//}
 
 	// Parse the Pod object.
 	//raw := req.Object.Raw
@@ -62,14 +70,45 @@ func applySecurityDefaults(req *v1beta1.AdmissionRequest) ([]patchOperation, err
 	//	return nil, fmt.Errorf("could not deserialize pod object: %v", err)
 	//}
 
-
-	// Create patch operations to apply sensible defaults, if those options are not set explicitly.
 	var patches []patchOperation
-	patches = append(patches, patchOperation{
-		Op:    "add",
-		Path:  "/metadata/labels/user",
-		Value: "Loren",
-	})
+
+	if req.Resource != dcResource {
+		log.Printf("expect resource to be %s", dcResource)
+		return nil, nil
+	} else {
+		raw := req.Object.Raw
+		dc := ov1.DeploymentConfig{}
+		if _, _, err := universalDeserializer.Decode(raw, nil, &dc); err != nil {
+			return nil, fmt.Errorf("could not deserialize pod object: %v", err)
+		}
+
+		oldRegistry := "ubuntu"
+		newRegistry := "loren"
+
+		for i := 0; i < len(dc.Spec.Template.Spec.Containers); i++ {
+			imageAddress := dc.Spec.Template.Spec.Containers[i].Image
+			//oldRegistry := os.Getenv("OLD_REGISTRY")
+			//newRegistry := os.Getenv("NEW_REGISTRY")
+
+			newImageAddress := strings.Replace(imageAddress, oldRegistry, newRegistry, 1)
+
+			path := fmt.Sprintf("/spec/template/spec/containers/%d/image", i)
+
+			patches = append(patches, patchOperation{
+				Op:    "replace",
+				Path:  path,
+				Value: newImageAddress,
+			})
+		}
+	}
+
+	//// Create patch operations to apply sensible defaults, if those options are not set explicitly.
+	//var patches []patchOperation
+	//patches = append(patches, patchOperation{
+	//	Op:    "replace",
+	//	Path:  "/metadata/labels/user",
+	//	Value: "Loren",
+	//})
 
 	return patches, nil
 }

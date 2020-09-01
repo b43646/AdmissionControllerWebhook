@@ -20,7 +20,7 @@ import (
 	"fmt"
 	"os"
 	"strings"
-
+	"encoding/json"
 	//	"errors"
 	//	"fmt"
 	"k8s.io/api/admission/v1beta1"
@@ -77,11 +77,15 @@ func applySecurityDefaults(req *v1beta1.AdmissionRequest) ([]patchOperation, err
 		return nil, nil
 	} else {
 		raw := req.Object.Raw
-		dc := ov1.DeploymentConfig{}
-		if _, _, err := universalDeserializer.Decode(raw, nil, &dc); err != nil {
-			return nil, fmt.Errorf("could not deserialize pod object: %v", err)
-		}
+		dc := &ov1.DeploymentConfig{}
 
+		//if _, _, err := universalDeserializer.Decode(raw, nil, dc); err != nil {
+		//	return nil, fmt.Errorf("could not deserialize pod object: %v", err)
+		//}
+
+		if err := json.Unmarshal(raw, dc); err != nil {
+			return nil, fmt.Errorf("could not unmarshal dc object: #{err}")
+		}
 		oldRegistry := "ubuntu"
 		newRegistry := "loren"
 

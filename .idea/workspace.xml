@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="efa10944-ffe7-431f-8c36-9bc4fe51338d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gopkg.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gopkg.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/webhook-server/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/webhook-server/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
